@@ -1,0 +1,55 @@
+body {
+    overflow: hidden;
+    min-height: 100vh;
+    cursor: crosshair;
+
+}
+h3{
+font-size: 3em;
+text-align: center;
+opacity: 0.5;
+}
+
+button {
+    margin-left: 47%;
+    margin-top: 35%;
+    padding: auto;
+    text-align: center;
+}
+
+.bubble {
+    position: absolute;
+    border-radius: 300px;
+    background: blue;
+    opacity: 0;
+    animation: animBubble 5s forwards; /*on créé une animation qui s'appelle animBubble et qui dure 5s. On la configure ensuite avec @keyframes // forwards = reste dans l'état que tu es a la fi nde l'anim*/
+    filter: hue-rotate(0deg); /*on parcours la roue chromatique sur 720° pour le changement de couleur. départ a 0° et arrivé a 720° dans l'anim*/
+}
+
+.blackbubble {
+    position: absolute;
+    border-radius: 300px;
+    background: black;
+    opacity: 1;
+    animation: animBlackBubble 8s forwards; 
+}
+
+.hidden{
+    display: none;
+}
+@keyframes animBubble{ /*configuration de l'animation*/
+    to { /*une fois la bulle créé et la classe attribuée elle vas jusqu'a */
+        top: -250px; /*jusqu'a -250px en haut*/
+        left: var(--left); /* variable pour le mouvement. set property dans le fichier js. var(--nomdevariable) en css*/
+        opacity: 1; /*jusqu'a 1 opa*/
+        filter: hue-rotate(720deg);/*jusqu'a 720deg*/
+    }
+}
+
+@keyframes animBlackBubble{ /*configuration de l'animation*/
+    to { /*une fois la bulle créé et la classe attribuée elle vas jusqu'a */
+        top: -250px; /*jusqu'a -250px en haut*/
+        left: var(--left); /* variable pour le mouvement. set property dans le fichier js. var(--nomdevariable) en css*/
+        opacity: 1; /*jusqu'a 1 opa*/
+    }
+}
